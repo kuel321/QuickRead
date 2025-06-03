@@ -17,7 +17,7 @@ export function App() {
   useEffect(() => {
     const fetchEmails = async () => {
       console.log("Fetching emails...");
-      const response = await fetch('http://localhost:3000/check-emails');
+      const response = await fetch('http://192.168.5.179:3000/check-emails');
       const data = await response.json();
       console.log(data);
       setEmails(data);
@@ -31,7 +31,11 @@ export function App() {
     setTimeout(() => {
       setSelectedIndex(index);
       setViewState("email");
-    }, 400); // match CSS duration
+       window.scrollTo({ top: 0, behavior: "smooth" }); 
+       
+    }, 400);
+        window.scrollTo({ top: 0, behavior: "smooth" }); 
+     // match CSS duration
   };
   
   const returnToList = () => {
